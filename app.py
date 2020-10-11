@@ -18,7 +18,7 @@ CORS(app)
 
 
 app.config.from_mapping(
-    SECRET_KEY=os.environ.get("key-id-pro")
+    SECRET_KEY=os.environ.get("key_id_pro")
 )
 
 @app.teardown_appcontext
@@ -44,7 +44,7 @@ def send_code():
     }
 
     captcha_response = req.post("https://www.google.com/recaptcha/api/siteverify", data={
-        'secret':  os.environ.get("recaptcha-id-pro"),
+        'secret':  os.environ.get("recaptcha_id_pro"),
         'response': params['captcha']
     })
 

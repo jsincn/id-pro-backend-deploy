@@ -4,8 +4,8 @@ import os
 
 # Your Account Sid and Auth Token from twilio.com/console
 # DANGER! This is insecure. See http://twil.io/secure
-account_sid = os.environ.get("twilio-id-pro-sid")
-auth_token = os.environ.get("twilio-id-pro-token")
+account_sid = os.environ.get("twilio_id_pro_sid")
+auth_token = os.environ.get("twilio_id_pro_token")
 
 def send_message(to, id):
     client = Client(account_sid, auth_token)

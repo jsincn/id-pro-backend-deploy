@@ -8,7 +8,7 @@ def send_email(email, id):
     template = render_template("emailFirstContact.html", id_val=id)
     return requests.post(
         "https://api.eu.mailgun.net/v3/mg.stei.ml/messages",
-        auth=("api", os.environ.get("mailgun-id-pro")),
+        auth=("api", os.environ.get("mailgun_id_pro")),
         data={"from": "ID <no-reply@mg.stei.ml>",
               "to": [email],
               "subject": "Your ID-PRO code",
@@ -23,7 +23,7 @@ def send_recovery_email(email, id):
     template = render_template("emailRecovery.html", id_val=id)
     return requests.post(
         "https://api.eu.mailgun.net/v3/mg.stei.ml/messages",
-        auth=("api",  os.environ.get("mailgun-id-pro")),
+        auth=("api",  os.environ.get("mailgun_id_pro")),
         data={"from": "ID <no-reply@mg.stei.ml>",
               "to": [email],
               "subject": "Your ID-PRO code",
